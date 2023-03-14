@@ -4,5 +4,5 @@ on: [push]
 
 jobs:
     display-time:
-        step:
+        steps:
         run: date
