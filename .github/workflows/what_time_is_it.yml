@@ -1,0 +1,8 @@
+name: time
+run-name: what time is it
+on: [push]
+
+jobs:
+    display-time:
+        step:
+        run: date
