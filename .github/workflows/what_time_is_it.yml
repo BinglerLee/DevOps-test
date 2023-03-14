@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
     display-time:
+        run-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
         - run: date
