@@ -1,0 +1,11 @@
+name: size
+run-name: size of the repo
+on: [push]
+
+jobs:
+    display-size:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - run: echo ${{ github.ref_name }}
+        - run: du -skh --exclude=".git"
