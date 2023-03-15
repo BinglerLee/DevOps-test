@@ -12,7 +12,7 @@ jobs:
         - uses: pixta-dev/repository-mirroring-action@v1
           with:
             target_repo_url:
-                git@github.com:EpitechPromo2027/B-DOP-200-LYN-2-1-bschocolatine-lee.bingler.git
+                git@github.com:BinglerLee/DevOps-test.git
             ssh_private_key:
                 ${{ secrets.SSH_PRIVATE_KEY }}
 
