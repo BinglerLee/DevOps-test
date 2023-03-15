@@ -17,4 +17,4 @@ jobs:
             ssh_private_key:
                 PRIVATE_KEY
             ssh_username:
-                BinglerLee
+                git
