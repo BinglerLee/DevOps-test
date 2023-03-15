@@ -16,3 +16,5 @@ jobs:
                 git@github.com:EpitechPromo2027/B-DOP-200-LYN-2-1-bschocolatine-lee.bingler.git
             ssh_private_key:
                 PRIVATE_KEY
+            ssh_username:
+                BinglerLee
