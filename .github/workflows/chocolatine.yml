@@ -19,7 +19,6 @@ jobs:
         steps:
         - uses: actions/checkout@v3
         - run: make
-        - run: make clean
         - if: [ ! -f ${{ EXEXCUTABLES }} ]
           run: exit(1)
 
