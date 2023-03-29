@@ -37,7 +37,15 @@ jobs:
           timeout-minutes: 2
 
         - name: check_exec_list_exist
-          run: echo "yes"
+          run: |
+              IFS=',' read -r -a array << $EXECUTABLES
+              for i in "${array[@]}"
+              do
+                  if [ ! -x $"i" ]; then
+                      echo "Binarie $i does not exist.\n"
+                      exit 1
+                  fi
+              done
 
     run_test:
         needs: [check_program_compilation]
