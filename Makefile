@@ -8,7 +8,7 @@
 
 TEST	= 	-L./lib/my -lmy -lm --coverage -lcriterion
 
-NAME	=	chocolatine
+NAME	=	painChoco
 
 all:	$(NAME)
 
