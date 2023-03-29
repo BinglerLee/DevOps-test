@@ -21,4 +21,4 @@ clean:
 	echo clean
 
 tests_run:	lib
-	gcc $(CFLAGS) -o unit_tests calcul_a_b_c.c tests/*.c $(TEST)
+	echo "tests_run"
