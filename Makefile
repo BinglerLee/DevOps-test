@@ -6,11 +6,9 @@
 ## implement the clean, fclean, re rule.
 ##
 
-CFLAGS	=	-g3 -g -Wall -Wextra -L./lib/my -lmy
-
 TEST	= 	-L./lib/my -lmy -lm --coverage -lcriterion
 
-NAME	=	make_all
+NAME	=	chocolatine
 
 all:	$(NAME)
 
