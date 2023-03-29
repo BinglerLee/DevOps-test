@@ -47,7 +47,7 @@ jobs:
           run: make tests_run
 
     push_to_mirror:
-        if: ${{ github.event_name == push }}
+        if: ${{ github.event_name == 'push' }}
         needs: [run_test]
         runs-on: ubuntu-latest
 
