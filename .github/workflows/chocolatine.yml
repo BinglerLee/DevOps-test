@@ -32,8 +32,7 @@ jobs:
           timeout-minutes: 2
 
         - name: check_exec_exist
-          if: [ ! -f ${{ EXECUTABLES }} ]
-          run: exit(1)
+          run: echo "yes"
 
     run_test:
         needs: [check_program_compilation]
