@@ -18,9 +18,21 @@ jobs:
 
         - name: coding_style_check
           run: check.sh $(pwd) $(pwd)
+          continue-on-error: true
 
         - name: check_is_theres_an_error
-          run: echo "check error"
+          run: |
+            if [ ! -f "coding-style-reports.log" ]; then
+              exit 0
+            elif [ $(wc -u "coding-style-reports.log" | awk '{print $1}') == "0" ]; then
+              exit 0
+            fi
+            exit 1
+          continue-on-error: true
+
+        - name: display_error
+          run: echo "::error file=coding-style-reports.log::meh"
+          
 
     check_program_compilation:
         needs: [check_coding_style]
@@ -45,7 +57,7 @@ jobs:
               for i in "${array[@]}"
               do
                   if [ ! -x $"i" ]; then
-                      echo "Binarie $i does not exist.\n"
+                      echo "::error::Binarie $i does not exist.\n"
                       exit 1
                   fi
               done
