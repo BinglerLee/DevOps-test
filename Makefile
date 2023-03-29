@@ -20,5 +20,5 @@ $(NAME):
 clean:
 	echo clean
 
-tests_run:	lib
+tests_run:
 	echo "tests_run"
