@@ -15,7 +15,7 @@ NAME	=	make_all
 all:	$(NAME)
 
 $(NAME):
-	echo name
+	echo $(NAME)
 
 clean:
 	echo clean
