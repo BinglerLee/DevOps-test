@@ -10,28 +10,33 @@ jobs:
     check_coding_style:
         runs-on: ghcr.io/epitech/coding-style-checker:latest
         steps:
+
         - name: checkout
           uses: actions/checkout@v3
+
         - name: coding_style_check
           run: check.sh $(pwd) $(pwd)
 
     check_program_compilation:
         needs: [check_coding_style]
         runs-on: epitechcontent/epitest-docker:latest
+
         steps:
         - name: checkout
           uses: actions/checkout@v3
+
         - name: check_exec 
           run: make
           timeout-minutes: 2
+
         - if: [ ! -f ${{ EXECUTABLES }} ]
           run: exit(1)
 
     run_test:
         needs: [check_program_compilation]
         runs_on: epitechcontent/epitest-docker:latest
-        steps:
 
+        steps:
         - name: checkout
           uses: actions/checkout@v3
 
@@ -42,9 +47,11 @@ jobs:
         if: ${{ github.event_name == "push" }}
         needs: [run_test]
         runs_on: ubuntu-latest
+
         steps:
         - name: checkout
           uses: actions/checkout@v3
+
         - name: mirroring
           uses: pixta-dev/repository-mirroring-action@v1
           with:
