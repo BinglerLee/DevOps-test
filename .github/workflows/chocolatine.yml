@@ -8,7 +8,8 @@ env:
 
 jobs:
     check_coding_style:
-        runs-on: ghcr.io/epitech/coding-style-checker:latest
+        runs-on: ubuntu-latest
+        container: ghcr.io/epitech/coding-style-checker:latest
         steps:
 
         - name: checkout
@@ -19,7 +20,8 @@ jobs:
 
     check_program_compilation:
         needs: [check_coding_style]
-        runs-on: epitechcontent/epitest-docker:latest
+        runs-on: ubuntu-latest
+        container: epitechcontent/epitest-docker:latest
 
         steps:
         - name: checkout
@@ -35,7 +37,8 @@ jobs:
 
     run_test:
         needs: [check_program_compilation]
-        runs_on: epitechcontent/epitest-docker:latest
+        runs-on: ubuntu-latest
+        container: epitechcontent/epitest-docker:latest
 
         steps:
         - name: checkout
@@ -47,7 +50,7 @@ jobs:
     push_to_mirror:
         if: ${{ github.event_name == "push" }}
         needs: [run_test]
-        runs_on: ubuntu-latest
+        runs-on: ubuntu-latest
 
         steps:
         - name: checkout
