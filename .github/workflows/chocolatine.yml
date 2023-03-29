@@ -4,8 +4,8 @@ run-name: chocolatine
 on: [push, pull_request]
 
 env:
-    - MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-LYN-2-1-chocolatine-lee.bingler.git
-    - EXECUTABLES: none
+    MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-LYN-2-1-chocolatine-lee.bingler.git
+    EXECUTABLES: none
 
 jobs:
     check_coding_style:
