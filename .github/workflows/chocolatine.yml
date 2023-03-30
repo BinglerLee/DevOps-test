@@ -28,9 +28,9 @@ jobs:
               exit 0
             fi
             exit 1
-          continue-on-error: true
 
         - name: display_error
+          if: ${{ failure() }}
           run: echo "::error file=coding-style-reports.log::mehh"
 
     check_program_compilation:
