@@ -13,7 +13,7 @@ i=0
 while read -r line; do
     if [ $i == 0 ]; then
         firstLine="$line"
-        printf "$firstLine\n\n"
+        printf "first: $firstLine\n\n"
     fi
     read -a strarr <<< "$line"
 
