@@ -18,7 +18,7 @@ while read -r line; do
     read -a strarr <<< "$line"
 
     if [[ $i != 0 ]] && [[ $firstLine == $line ]]; then
-        printf "$i, $firstLine, $line\n"
+        printf "break\n"
         break
     fi
 

@@ -44,7 +44,7 @@ jobs:
               read -a strarr <<< "$line"
 
               if [[ $i != 0 ]] && [[ $firstLine == $line ]]; then
-                  printf "break\n"
+                  printf "envie de dead\n"
                   break
               fi
 
