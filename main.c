@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 
-int main(void) {
-    printf("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+int main(void)
+{
+    printf("e");
 }
