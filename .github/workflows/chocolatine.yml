@@ -28,7 +28,6 @@ jobs:
               exit 0
             fi
             exit 1
-          continue-on-error: true
 
         - name: display_error
           if: ${{ failure() }}
