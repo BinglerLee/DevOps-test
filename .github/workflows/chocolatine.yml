@@ -28,9 +28,11 @@ jobs:
 
         - name: check_is_theres_an_coding_style_error
           run: |
-            if [ ! -f "coding-style-reports.log" ]; then
+            if [ ! -f 'coding-style-reports.log' ]; then
+              echo "+"
               exit 0
-            elif [ $(wc -c "coding-style-reports.log" | awk '{print $1}') === "0" ]; then
+            elif [ $(wc -c 'coding-style-reports.log' | awk '{print $1}') === "0" ]; then
+              echo "-"
               exit 0
             fi
             exit 1
