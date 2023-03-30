@@ -34,6 +34,7 @@ jobs:
           run: |
             input='coding-style-reports.log'
             IFS=':'
+            echo "*"
             while read line; do
                 read -a strarr <<< "$line"
                 strarr[0]=$(echo "${strarr[0]}" | sed -r 's/^.{2}//')
