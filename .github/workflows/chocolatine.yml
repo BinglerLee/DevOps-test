@@ -31,8 +31,7 @@ jobs:
           continue-on-error: true
 
         - name: display_error
-          run: echo "::error file=coding-style-reports.log::meh"
-          
+          run: echo "::error file=coding-style-reports.log::mehh"
 
     check_program_compilation:
         needs: [check_coding_style]
