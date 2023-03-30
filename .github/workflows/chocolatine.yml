@@ -27,6 +27,7 @@ jobs:
             elif [ $(wc -c "coding-style-reports.log" | awk '{print $1}') === "0" ]; then
               exit 0
             fi
+            exit 1
 
         - name: display_error
           if: ${{ failure() }}
