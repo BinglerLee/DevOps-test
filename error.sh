@@ -8,7 +8,7 @@
 
 input='coding-style-reports.log'
 IFS=':'
-while read line; do
+while read -r line; do
     read -a strarr <<< "$line"
     strarr[0]=$(echo "${strarr[0]}" | sed -r 's/^.{2}//')
     strarr[2]=$(echo "${strarr[2]}" | sed -r 's/^.{1}//')
