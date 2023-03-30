@@ -27,7 +27,6 @@ jobs:
             elif [ $(wc -c "coding-style-reports.log" | awk '{print $1}') === "0" ]; then
               exit 0
             fi
-            exit 1
 
         - name: display_error
           if: ${{ failure() }}
@@ -38,7 +37,8 @@ jobs:
                 read -a strarr <<< "$line"
                 strarr[0]=$(echo "${strarr[0]}" | sed -r 's/^.{2}//')
                 strarr[2]=$(echo "${strarr[2]}" | sed -r 's/^.{1}//')
-                echo "::error file=${strarr[0]},line=${strarr[1]},endLine=$((${strarr[1]} + 1)),title="${strarr[2]} coding style error"::${strarr[3]} "
+                echo "+"
+                echo "::error file=${strarr[0]},line=${strarr[1]},endLine=$((${strarr[1]} + 1)),title="${strarr[2]} coding style error"::${strarr[3]}"
             done < "$input"
 
     check_program_compilation:
