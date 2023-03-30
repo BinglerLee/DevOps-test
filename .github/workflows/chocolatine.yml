@@ -20,7 +20,7 @@ jobs:
           run: check.sh $(pwd) $(pwd)
           continue-on-error: true
 
-        - name: check_is_theres_an_error
+        - name: check_is_theres_an_coding_style_error
           run: |
             if [ ! -f "coding-style-reports.log" ]; then
               exit 0
@@ -41,6 +41,7 @@ jobs:
                 echo "+"
                 echo "::error file=${strarr[0]},line=${strarr[1]},endLine=$((${strarr[1]} + 1)),title="${strarr[2]} coding style error"::${strarr[3]}"
             done < "$input"
+            echo "-"
 
     check_program_compilation:
         needs: [check_coding_style]
