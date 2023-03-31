@@ -24,8 +24,8 @@ jobs:
 
         - name: run the coding style
           run: |
-            cat check.sh
             check.sh $(pwd) $(pwd)
+            cat check.sh
 
         - name: check is theres an coding style error
           run: |
