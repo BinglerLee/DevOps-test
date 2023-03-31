@@ -19,13 +19,15 @@ jobs:
         container: ghcr.io/epitech/coding-style-checker:latest
         steps:
 
-        - name: checkout
+        - name: make the checkout of the repo
           uses: actions/checkout@v3
 
-        - name: run_coding_style
-          run: check.sh $(pwd) $(pwd)
+        - name: run the coding style
+          run: |
+            cat check.sh
+            check.sh $(pwd) $(pwd)
 
-        - name: check_is_theres_an_coding_style_error
+        - name: check is theres an coding style error
           run: |
             if [ ! -f 'coding-style-reports.log' ]; then
               exit 0
@@ -51,16 +53,15 @@ jobs:
         container: epitechcontent/epitest-docker:latest
 
         steps:
-        - name: checkout
+        - name: make the checkout of the repo
           uses: actions/checkout@v3
 
-        - name: compute the program
+        - name: compute program
           run: make
           timeout-minutes: 2
         
-        - name: make_clean
+        - name: make the clean rule
           run: make clean
-          timeout-minutes: 2
 
         - name: check_exec_list_exist
           run: |
@@ -79,10 +80,10 @@ jobs:
         container: epitechcontent/epitest-docker:latest
 
         steps:
-        - name: checkout
+        - name: make the checkout of the repo
           uses: actions/checkout@v3
 
-        - name: test_run
+        - name: make the tests_run rule
           run: make tests_run
           timeout-minutes: 2
 
@@ -92,12 +93,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-        - name: checkout
+        - name: make the checkout of the repo
           uses: actions/checkout@v3
           with: 
             fetch-depth: 0
 
-        - name: mirroring
+        - name: mirroring the repo
           uses: pixta-dev/repository-mirroring-action@v1
           with:
             target_repo_url:
