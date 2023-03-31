@@ -23,9 +23,7 @@ jobs:
           uses: actions/checkout@v3
 
         - name: run the coding style
-          run: |
-            check.sh $(pwd) $(pwd)
-            alias
+          run: check.sh $(pwd) $(pwd)
 
         - name: check is theres an coding style error
           run: |
