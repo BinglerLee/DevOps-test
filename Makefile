@@ -17,3 +17,6 @@ $(NAME):
 
 clean:
 	echo clean
+
+tests_run:
+	echo tests_run
