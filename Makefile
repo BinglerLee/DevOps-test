@@ -8,7 +8,7 @@
 
 SRC	=	main.c	\
 
-TEST	= 	-L./lib/my -lmy -lm --coverage -lcriterion
+TEST	= 	--coverage -lcriterion
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -25,5 +25,5 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-tests_run:
-	echo tests_run
+tests_run: $(OBJ)
+	gcc $(CFLAGS) -o unit_tests  $(OBJ) tests/*.c $(TEST)
