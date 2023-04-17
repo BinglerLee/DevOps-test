@@ -11,7 +11,7 @@ on:
 
 env:
     MIRROR_URL: "git@github.com:EpitechPromo2027/B-DOP-200-LYN-2-1-chocolatine-lee.bingler.git"
-    EXECUTABLES: "antman,giantman"
+    EXECUTABLES: "painChoco"
 
 jobs:
     check_coding_style:
@@ -57,7 +57,7 @@ jobs:
         - name: compute program
           run: make
           timeout-minutes: 2
-        
+
         - name: make the clean rule
           run: make clean
 
@@ -93,7 +93,7 @@ jobs:
         steps:
         - name: make the checkout of the repo
           uses: actions/checkout@v3
-          with: 
+          with:
             fetch-depth: 0
 
         - name: mirroring the repo
