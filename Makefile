@@ -12,7 +12,7 @@ TEST	= 	-L./lib/my -lmy -lm --coverage -lcriterion
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	painChoco
+NAME	=	chocolatine
 
 all:	$(NAME)
 
